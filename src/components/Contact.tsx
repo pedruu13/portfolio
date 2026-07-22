@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Magnetic from "@/components/Magnetic";
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Magnetic from '@/components/Magnetic';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,32 +21,34 @@ export default function Contact() {
         y: 0,
         opacity: 1,
         duration: 1,
-        ease: "power4.out",
+        ease: 'power4.out',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: 'top 80%',
         },
       }
     );
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      className="relative w-full min-h-[80vh] flex flex-col justify-between bg-black text-white px-4 md:px-20 pt-32 pb-10 z-10"
+      className="relative z-10 flex min-h-[80vh] w-full flex-col justify-between bg-black px-4 pt-32 pb-10 text-white md:px-20"
     >
-      <div className="flex-1 flex flex-col justify-center">
-        <h2 
+      <div className="flex flex-1 flex-col justify-center">
+        <h2
           ref={textRef}
-          className="text-6xl md:text-[10vw] font-black uppercase tracking-tighter leading-none"
+          className="text-6xl leading-none font-black tracking-tighter uppercase md:text-[10vw]"
         >
-          Vamos Trabalhar<br/>Juntos
+          Vamos Trabalhar
+          <br />
+          Juntos
         </h2>
         <div className="mt-8 w-fit">
           <Magnetic>
-            <a 
-              href="mailto:hello@example.com" 
-              className="text-xl md:text-3xl text-neutral-400 hover:text-white transition-colors duration-300 block p-4 -m-4"
+            <a
+              href="mailto:hello@example.com"
+              className="-m-4 block p-4 text-xl text-neutral-400 transition-colors duration-300 hover:text-white md:text-3xl"
             >
               hello@example.com
             </a>
@@ -54,13 +56,34 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="mt-20 flex flex-col md:flex-row justify-between items-end md:items-center gap-8 border-t border-white/10 pt-8">
-        <div className="flex gap-6 text-sm uppercase tracking-widest font-medium">
-          <Magnetic><a href="#" className="hover:text-neutral-400 transition-colors block p-2 -m-2">Twitter</a></Magnetic>
-          <Magnetic><a href="#" className="hover:text-neutral-400 transition-colors block p-2 -m-2">LinkedIn</a></Magnetic>
-          <Magnetic><a href="#" className="hover:text-neutral-400 transition-colors block p-2 -m-2">Instagram</a></Magnetic>
+      <div className="mt-20 flex flex-col items-end justify-between gap-8 border-t border-white/10 pt-8 md:flex-row md:items-center">
+        <div className="flex gap-6 text-sm font-medium tracking-widest uppercase">
+          <Magnetic>
+            <a
+              href="#"
+              className="-m-2 block p-2 transition-colors hover:text-neutral-400"
+            >
+              Twitter
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a
+              href="#"
+              className="-m-2 block p-2 transition-colors hover:text-neutral-400"
+            >
+              LinkedIn
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a
+              href="#"
+              className="-m-2 block p-2 transition-colors hover:text-neutral-400"
+            >
+              Instagram
+            </a>
+          </Magnetic>
         </div>
-        
+
         <div className="text-sm text-neutral-500">
           © {new Date().getFullYear()} Todos os direitos reservados.
         </div>

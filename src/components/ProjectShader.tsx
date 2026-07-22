@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useRef, useMemo } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import { useRef, useMemo } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
 
 const vertexShader = `
 varying vec2 vUv;
@@ -61,7 +61,7 @@ function ShaderPlane({ isHovered }: { isHovered: boolean }) {
   useFrame((state, delta) => {
     if (materialRef.current) {
       materialRef.current.uniforms.uTime.value += delta;
-      
+
       // Interpolate hover position towards center or mouse
       targetHover.current.setScalar(isHovered ? 0.5 : 2.0); // 2.0 means far away (no effect)
       currentHover.current.lerp(targetHover.current, 0.05);
@@ -84,7 +84,7 @@ function ShaderPlane({ isHovered }: { isHovered: boolean }) {
 
 export default function ProjectShader({ isHovered }: { isHovered: boolean }) {
   return (
-    <div className="absolute inset-0 w-full h-full pointer-events-none">
+    <div className="pointer-events-none absolute inset-0 h-full w-full">
       <Canvas camera={{ position: [0, 0, 1] }}>
         <ShaderPlane isHovered={isHovered} />
       </Canvas>

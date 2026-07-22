@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Magnetic({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -13,7 +13,7 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
     const { height, width, left, top } = ref.current.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    
+
     // Magnetic pull strength
     setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
   };
@@ -28,7 +28,7 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
       className="inline-block"
     >
       {children}

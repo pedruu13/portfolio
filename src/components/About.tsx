@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitType from "split-type";
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,7 +15,7 @@ export default function About() {
     if (!textRef.current || !containerRef.current) return;
 
     // Split text into characters
-    const text = new SplitType(textRef.current, { types: "chars,words" });
+    const text = new SplitType(textRef.current, { types: 'chars,words' });
 
     // Initial state
     gsap.set(text.chars, { opacity: 0.2 });
@@ -24,11 +24,11 @@ export default function About() {
     gsap.to(text.chars, {
       opacity: 1,
       stagger: 0.05,
-      ease: "none",
+      ease: 'none',
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top center",
-        end: "bottom center",
+        start: 'top center',
+        end: 'bottom center',
         scrub: true,
       },
     });
@@ -40,17 +40,19 @@ export default function About() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      className="relative w-full min-h-screen flex items-center justify-center bg-black py-20 px-4 md:px-20 z-10"
+      className="relative z-10 flex min-h-screen w-full items-center justify-center bg-black px-4 py-20 md:px-20"
     >
-      <div className="max-w-5xl mx-auto">
-        <h2 
+      <div className="mx-auto max-w-5xl">
+        <h2
           ref={textRef}
-          className="text-4xl md:text-7xl font-bold text-white leading-tight"
-          style={{ fontKerning: "none" }}
+          className="text-4xl leading-tight font-bold text-white md:text-7xl"
+          style={{ fontKerning: 'none' }}
         >
-          Sou um artista digital e desenvolvedor criativo criando experiências web imersivas que mesclam design e engenharia. Meu foco é em movimento, interação e narrativa visual 3D.
+          Sou um artista digital e desenvolvedor criativo criando experiências
+          web imersivas que mesclam design e engenharia. Meu foco é em
+          movimento, interação e narrativa visual 3D.
         </h2>
       </div>
     </section>

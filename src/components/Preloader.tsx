@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Preloader() {
   const [progress, setProgress] = useState(0);
@@ -10,7 +10,7 @@ export default function Preloader() {
 
   useEffect(() => {
     // Lock scrolling
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
 
     // Simulate loading
     const interval = setInterval(() => {
@@ -20,8 +20,8 @@ export default function Preloader() {
           setTimeout(() => {
             setIsLoading(false);
             // Unlock scrolling
-            document.body.style.overflow = "";
-            
+            document.body.style.overflow = '';
+
             // Refresh ScrollTrigger after unlocking so the Work section pin is calculated correctly
             setTimeout(() => {
               ScrollTrigger.refresh();
@@ -35,7 +35,7 @@ export default function Preloader() {
 
     return () => {
       clearInterval(interval);
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     };
   }, []);
 
@@ -45,25 +45,25 @@ export default function Preloader() {
         <motion.div
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black text-white"
           initial={{ y: 0 }}
-          exit={{ y: "-100vh" }}
+          exit={{ y: '-100vh' }}
           transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
         >
-          <div className="flex flex-col items-center justify-center w-full h-full relative">
+          <div className="relative flex h-full w-full flex-col items-center justify-center">
             {/* The Percentage Text */}
-            <motion.h1 
-              className="text-[15vw] md:text-[20vw] font-black leading-none tracking-tighter"
+            <motion.h1
+              className="text-[15vw] leading-none font-black tracking-tighter md:text-[20vw]"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
             >
               {Math.min(progress, 100)}%
             </motion.h1>
-            
+
             {/* Minimalist Loading Bar */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-64 h-[2px] bg-white/20 overflow-hidden">
-              <motion.div 
+            <div className="absolute bottom-10 left-1/2 h-[2px] w-64 -translate-x-1/2 overflow-hidden bg-white/20">
+              <motion.div
                 className="h-full bg-white"
-                initial={{ width: "0%" }}
+                initial={{ width: '0%' }}
                 animate={{ width: `${Math.min(progress, 100)}%` }}
                 transition={{ duration: 0.1 }}
               />
