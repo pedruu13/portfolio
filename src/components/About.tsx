@@ -47,12 +47,14 @@ export default function About() {
       <div className="mx-auto max-w-5xl">
         <h2
           ref={textRef}
-          className="text-4xl leading-tight font-bold text-white md:text-7xl"
+          className="text-3xl leading-tight font-bold text-white md:text-5xl lg:text-6xl"
           style={{ fontKerning: 'none' }}
         >
-          Sou um artista digital e desenvolvedor criativo criando experiências
-          web imersivas que mesclam design e engenharia. Meu foco é em
-          movimento, interação e narrativa visual 3D.
+          Building modern digital experiences through code, motion and thoughtful design.
+          <br /><br />
+          <span className="text-xl md:text-3xl lg:text-4xl text-white/70">
+            Desenvolvedor Full Stack especializado em criar aplicações e experiências web modernas, combinando desenvolvimento, design e animações para entregar produtos rápidos, elegantes e funcionais.
+          </span>
         </h2>
       </div>
     </section>

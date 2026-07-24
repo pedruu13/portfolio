@@ -7,6 +7,11 @@ export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
@@ -44,7 +49,7 @@ export default function CustomCursor() {
     };
   }, [isVisible]);
 
-  if (typeof window === 'undefined') return null;
+  if (!isMounted) return null;
 
   return (
     <>
