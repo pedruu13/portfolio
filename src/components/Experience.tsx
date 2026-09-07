@@ -10,27 +10,26 @@ const experienceData = [
   {
     title: 'Competências',
     items: [
-      'Desenvolvimento Frontend',
-      'Programação Criativa',
-      'Engenharia de UI/UX',
-      'WebGL & 3D',
-      'Otimização de Performance',
+      'Desenvolvimento Full-Stack',
+      'JavaScript & TypeScript',
+      'Python & Automação',
+      'Java & OOP',
+      'Banco de Dados (SQLite)',
     ],
   },
   {
-    title: 'Certificações',
+    title: 'Certificações & Bootcamps',
     items: [
-      'AWS Certified Developer',
-      'Google Cloud Professional',
-      'Meta Front-End Developer',
+      'Bootcamp IA - DIO',
+      'Formação Java Developer - DIO',
+      'Projetos Open Source no GitHub',
     ],
   },
   {
-    title: 'Cursos',
+    title: 'Formação',
     items: [
-      'Three.js Journey por Bruno Simon',
-      'Práticas Criativas Awwwards',
-      'Padrões Avançados de React',
+      'Tecnologia em Análise e Desenvolvimento de Sistemas',
+      'UNINOVE (Jan 2023 - Jul 2025)',
     ],
   },
 ];
@@ -41,9 +40,9 @@ export default function Experience() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const sections = gsap.utils.toArray('.exp-section');
+    const sections = gsap.utils.toArray('.exp-section') as HTMLElement[];
 
-    sections.forEach((section: HTMLElement) => {
+    sections.forEach((section) => {
       gsap.fromTo(
         section,
         { opacity: 0, y: 50 },

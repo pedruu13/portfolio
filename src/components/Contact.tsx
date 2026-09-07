@@ -47,10 +47,10 @@ export default function Contact() {
         <div className="mt-8 w-fit">
           <Magnetic>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:pedromoreiraa1305@gmail.com"
               className="-m-4 block p-4 text-xl text-neutral-400 transition-colors duration-300 hover:text-white md:text-3xl"
             >
-              hello@example.com
+              pedromoreiraa1305@gmail.com
             </a>
           </Magnetic>
         </div>
@@ -60,26 +60,22 @@ export default function Contact() {
         <div className="flex gap-6 text-sm font-medium tracking-widest uppercase">
           <Magnetic>
             <a
-              href="#"
+              href="https://github.com/pedruu13"
+              target="_blank"
+              rel="noopener noreferrer"
               className="-m-2 block p-2 transition-colors hover:text-neutral-400"
             >
-              Twitter
+              GitHub
             </a>
           </Magnetic>
           <Magnetic>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/pedro-henrique-macedo-moreira-ba02741a0/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="-m-2 block p-2 transition-colors hover:text-neutral-400"
             >
               LinkedIn
-            </a>
-          </Magnetic>
-          <Magnetic>
-            <a
-              href="#"
-              className="-m-2 block p-2 transition-colors hover:text-neutral-400"
-            >
-              Instagram
             </a>
           </Magnetic>
         </div>

@@ -5,48 +5,53 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     id: 1,
-    title: 'ALLIANCEA',
+    title: 'ALLIANCE',
     category: 'Software / Desktop App',
     color: 'bg-neutral-800',
-    tags: ['HTML', 'JS', 'Node.js'],
+    tags: ['Electron', 'Vite', 'SQLite'],
     image: '/alliancea_print.png',
-    description: 'Um sistema de gestão completo para joalherias. Permite o controle de estoque, vendas, impressão de recibos, emissão de NF-e e gerenciamento de clientes, tudo com uma interface otimizada para Desktop.',
+    description: 'Sistema de Gestão Desktop Offline-First para Joalherias com Controle de Estoque, PDV e emissão de NF-e via integração FocusNFe.',
+    link: 'https://github.com/pedruu13/Alliance',
   },
   {
     id: 2,
-    title: 'Luíza & Luan',
-    category: 'Casamento / Landing Page',
+    title: 'Site Casamento',
+    category: 'Landing Page / Eventos',
     color: 'bg-rose-900',
-    tags: ['React', 'Next.js', 'Tailwind'],
+    tags: ['HTML', 'CSS', 'JavaScript'],
     image: '/luelu_print.png',
-    description: 'Site de casamento elegante com confirmação de presença (RSVP) e lista de presentes virtuais. Design clean e romântico, focado na experiência dos convidados.',
+    description: 'Site de casamento elegante com confirmação de presença (RSVP) e lista de presentes virtuais. Design clean focado na experiência dos convidados.',
+    link: 'https://lu-e-lu.vercel.app/',
   },
   {
     id: 3,
-    title: 'NEXUS',
-    category: 'E-Commerce / 3D',
+    title: 'BarberPro SaaS',
+    category: 'Web App / SaaS',
     color: 'bg-neutral-700',
-    tags: ['React', 'Three.js'],
-    image: '',
-    description: 'Plataforma de e-commerce interativa com visualização 3D de produtos.',
+    tags: ['JavaScript', 'SaaS'],
+    image: 'https://image.thum.io/get/width/800/crop/600/https://barberpro-saas-nu.vercel.app/barbearia-saas.html',
+    description: 'Plataforma SaaS para gestão de barbearias, focada em otimizar agendamentos, clientes e controle financeiro.',
+    link: 'https://barberpro-saas-nu.vercel.app/barbearia-saas.html',
   },
   {
     id: 4,
-    title: 'LUMINA',
-    category: 'Portfólio / Animação',
+    title: 'Gestão de Leads',
+    category: 'Automação / Ferramenta',
     color: 'bg-neutral-600',
-    tags: ['Next.js', 'GSAP'],
-    image: '',
-    description: 'Portfólio interativo focado em animações fluidas e micro-interações.',
+    tags: ['Python', 'Automação'],
+    image: 'https://placehold.co/800x600/171717/a3a3a3?text=Gestao+de+Leads&font=montserrat',
+    description: 'Sistema para captação e gerenciamento de leads, voltado para facilitar o contato e acompanhamento comercial.',
+    link: 'https://github.com/pedruu13/gestaoLead',
   },
   {
     id: 5,
-    title: 'OASIS',
-    category: 'App / Interação',
-    color: 'bg-neutral-500',
-    tags: ['React Native'],
-    image: '',
-    description: 'Aplicativo mobile com interface limpa e intuitiva para usuários.',
+    title: 'LinkedIn Auto-Apply AI',
+    category: 'IA / Automação',
+    color: 'bg-blue-900',
+    tags: ['JavaScript', 'Automação', 'IA'],
+    image: 'https://placehold.co/800x600/004182/ffffff?text=Auto+Apply+Bot&font=montserrat',
+    description: 'Robô inteligente desenvolvido em JavaScript para automatizar candidaturas em vagas no LinkedIn, otimizando o processo de busca de emprego.',
+    link: 'https://github.com/pedruu13/linkedin-auto-apply-bot',
   },
 ];
 
@@ -60,7 +65,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: any = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
@@ -98,7 +103,10 @@ export default function Work() {
           className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8"
         >
           {projects.map((project) => (
-            <motion.div
+            <motion.a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={project.id}
               variants={itemVariants}
               className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 transition-all duration-400 hover:-translate-y-1.5 hover:border-neutral-700 hover:shadow-2xl hover:shadow-white/5"
@@ -123,8 +131,9 @@ export default function Work() {
               {/* Body */}
               <div className="flex flex-1 flex-col p-6 md:p-8">
                 <div className="mb-2 flex items-center justify-between">
-                  <h3 className="text-xl font-bold tracking-tight text-white uppercase">
+                  <h3 className="text-xl font-bold tracking-tight text-white uppercase flex items-center gap-2">
                     {project.title}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
                   </h3>
                   <span className="text-xs font-medium uppercase tracking-wider text-neutral-500">
                     {project.category.split('/')[0].trim()}
@@ -147,7 +156,7 @@ export default function Work() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 
