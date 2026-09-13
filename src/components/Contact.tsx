@@ -32,6 +32,7 @@ export default function Contact() {
 
   return (
     <section
+      id="contato"
       ref={containerRef}
       className="relative z-10 flex min-h-[80vh] w-full flex-col justify-between bg-black px-4 pt-32 pb-10 text-white md:px-20"
     >

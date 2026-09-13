@@ -62,6 +62,7 @@ export default function Experience() {
 
   return (
     <section
+      id="sobre"
       ref={containerRef}
       className="relative z-10 min-h-screen w-full bg-black px-4 py-32 text-white md:px-20"
     >

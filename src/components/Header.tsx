@@ -49,13 +49,13 @@ export default function Header() {
         </a>
 
         <nav className="hidden gap-8 text-sm font-medium tracking-widest text-neutral-400 uppercase md:flex">
-          <a href="#" className="transition-colors hover:text-white">
+          <a href="#trabalhos" className="transition-colors hover:text-white">
             Trabalhos
           </a>
-          <a href="#" className="transition-colors hover:text-white">
+          <a href="#sobre" className="transition-colors hover:text-white">
             Sobre
           </a>
-          <a href="#" className="transition-colors hover:text-white">
+          <a href="#contato" className="transition-colors hover:text-white">
             Contato
           </a>
         </nav>

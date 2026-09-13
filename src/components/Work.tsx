@@ -72,7 +72,7 @@ const itemVariants: any = {
 
 export default function Work() {
   return (
-    <section className="relative z-10 w-full min-h-screen bg-black py-24 md:py-32">
+    <section id="trabalhos" className="relative z-10 w-full min-h-screen bg-black py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6 md:px-12">
         
         {/* Section Header */}
